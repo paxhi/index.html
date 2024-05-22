@@ -1,0 +1,21 @@
+body{font-family:'Times New Roman', Times, serif}
+h1{color:aqua
+   font-size:20px}
+img{margin-left:150px;}
+h2{color:blue
+    font-size:16px;}
+p{color:blueviolet
+  font-size:12px
+  width: 60%
+  padding-left: 50px}
+ol,ul {border-style: dotted;
+       margin-right: 500px;
+       background:#afeeee}
+li{color:blueviolet;
+  width: 60%;
+  padding: 5px;}
+footer {text-align:center;
+        color:bisque;
+        font-size: 11px;
+        width: 60%;
+        background:#afeeee}

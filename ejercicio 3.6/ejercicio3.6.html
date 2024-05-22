@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{margin: 0%; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;}
+    div{display: flex; flex-direction: column; align-items: center; height: 70vh; width: 50vw;}
+    button{height: 14vw; width: 14vw; background-image: url("images.jpg"); background-repeat: no-repeat; background-size: cover; border: none;}
+    h1{font-size: 5rem; color: orangered; word-break: keep-all; margin-bottom: 0.2rem;}
+    p{font-size: 2rem; word-break: break-all; margin-top: 0.2rem;}
+    @media screen and (max-width: 600px){
+        button{height: 22vw; width: 22vw;}
+        div{width: 90vw;}
+    }
+    </style>        
+</head>
+<body>
+    <button type="button" onclick="funci()"></button>
+    <div>
+        <h1 id="num">_</h1>
+        <p id="ordenados">_</p>
+    </div>
+    <script>
+        let ar = [];
+        for (let i=1;i<=90;i++){/*este "for" es para evitar escribir [let ar = 1,2,3,4,5...,99,100]*/
+             ar.push(i) /*tambien lo podriamos hacer creando una variable let item=1;y dentro del for a[]=item; item++; empezando el contador en a=0*/
+        }
+        let j;
+        let premio;
+        let acumuladosOrd = [];
+        
+        function funci(){
+            do {
+            j = Math.floor(Math.random()*ar.length);
+            premio = ar[j];
+            ar.splice(j,1)
+            acumuladosOrd.push(premio);
+            acumuladosOrd.sort(function (a,b){return a-b});
+            document.getElementById("num").innerHTML = premio;
+            document.getElementById("ordenados").innerHTML = " " + acumuladosOrd;
+            } while (premio == undefined && ar.length > 0)
+            if (ar.length == 0) {
+            document.getElementById("num").innerHTML = "E1" + premio + " es el ultimo numero.";
+            }
+        } 
+    </script>     
+</body>
+</html>
